@@ -14,9 +14,11 @@
 
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/5596e86072.js" crossorigin="anonymous"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
@@ -24,8 +26,11 @@
 
   <body>
     <!-- Top nav bar (fixed) -->
-    <nav>
-      <span>tweeter by Rhys Wood</span>
+    <nav class="navbar">
+      <span id="home">tweeter</span>
+      <div>
+        <div>Write a new tweet <i class="fas fa-angle-double-down"></i></div>
+      </div>
     </nav>
 
     <!-- Page-specific (main) content here -->
