@@ -1,0 +1,18 @@
+header{
+  height: 400px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: gold;
+  background-image: url(http://www.transparenttextures.com/patterns/az-subtle.png);
+}
+
+header h2{
+  margin-top: auto;
+}
+
+header div img {
+  margin-top: 1em;
+}
