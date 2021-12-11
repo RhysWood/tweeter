@@ -25,7 +25,11 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- header{
-   height: 400px;
-   width: 100%;
+main{
+   width: 90%;
+   background-color: #f4f1ec;
+   display: flex;
+   text-align: center;
+   margin-left: auto;
+   margin-right: auto;
  }
