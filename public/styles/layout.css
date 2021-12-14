@@ -29,10 +29,9 @@ main{
    width: 90%;
    background-color: #f4f1ec;
    display: flex;
-   flex-direction: row;
+   flex-direction: column;
    justify-content:center;
-   align-content: center;
-   text-align: center;
+   align-items: center;
    margin-left: auto;
    margin-right: auto;
  }
