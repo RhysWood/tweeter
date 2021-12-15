@@ -9,6 +9,8 @@
   font-family:Source Sans Pro, sans-serif;
   position: sticky;
   width: 100%;
+  position: fixed;
+  top: 0;
 }
 
 #home{
