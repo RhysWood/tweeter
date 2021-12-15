@@ -3,8 +3,8 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-$(document).ready(function(){
-const tweetData = [
+$(document).ready(function () {
+  const tweetData = [
     {
       "user": {
         "name": "Newton",
@@ -27,17 +27,17 @@ const tweetData = [
       },
       "created_at": 1639436494296
     }
-]
+  ]
 
-const renderTweets = function(tweets){
-  for (const tweet of tweets) {
-    let $renderTweet = createTweetElement(tweet);
-    $('.tweet-container').append($renderTweet);
+  const renderTweets = function (tweets) {
+    for (const tweet of tweets) {
+      let $renderTweet = createTweetElement(tweet);
+      $('.tweet-container').append($renderTweet);
+    }
   }
-}
 
-const createTweetElement = function(tweet){
-  const $tweet = $(`<article> 
+  const createTweetElement = function (tweet) {
+    const $tweet = $(`<article> 
   <div class="tweet-box-top"> 
     <div id="tweet-user">
       <img src="${tweet.user.avatars}"> 
@@ -45,26 +45,24 @@ const createTweetElement = function(tweet){
     </div>
     <div>${tweet.user.handle}</div>
   </div>
-  
   <div> 
     <div id="the-tweet">
       <p>${tweet.content.text}</p>
     </div>
   </div>
-  
   <footer> 
     <div>
       <p>${tweet.created_at}</p>
     </div>
     <div id="tweet-icons">
-      <i style="margin: 4px;" class="fas fa-flag"></i>
-      <i style="margin: 4px;" class="fas fa-retweet"></i>
-      <i style="margin: 4px;" class="far fa-heart"></i>
+      <i class="fas fa-flag"></i>
+      <i class="fas fa-retweet"></i>
+      <i class="far fa-heart"></i>
     </div>
   </footer>
   </article>`);
-  return $tweet;
-} 
-renderTweets(tweetData);
+    return $tweet;
+  }
+  renderTweets(tweetData);
 });
 

@@ -48,11 +48,23 @@ footer{
 }
 
 .tweet-container{
+  width: 30em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.tweet-container article{
   border: 1px solid rgb(0, 0, 0);
   height: auto;
   width: 30em;
   margin-top: 2em;
   margin-bottom: 2em;
+  transition: box-shadow .3s;
+  border-radius:10px;
+}
+
+.tweet-container article:hover{
+  box-shadow: 0 0 11px rgba(33,33,33,.2); 
 }
 
 .form-tweet {
@@ -74,10 +86,20 @@ footer{
   justify-content: center;
 }
 
+#tweet-user img{
+  height: 1.5em;
+  width: 1.5em;
+  margin-right: 1em;
+}
+
 #tweet-icons{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+#tweet-icons i{
+  margin: 4px
 }
 
 #the-tweet{
