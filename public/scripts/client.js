@@ -64,5 +64,19 @@ $(document).ready(function () {
     return $tweet;
   }
   renderTweets(tweetData);
-});
+
+  // Post New Tweet
+  $('.form-tweet').on('submit', event => {
+    //prevent page from reloading
+    event.preventDefault();
+    //define tweet as the form input and serialize data
+    let $tweet = $('.form-tweet').serialize();
+    //post tweet to tweets
+    $.post('/tweets/', $tweet, (err, data) => {
+      //clears text box after post
+      const $input = $('#tweet-text');
+      $input.val('').focus();
+    })
+  });
+})
 
