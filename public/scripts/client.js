@@ -4,66 +4,49 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 $(document).ready(function () {
-  const tweetData = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png",
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1639350094296
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd"
-      },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1639436494296
-    }
-  ]
-
+  //inserts the tweet into the tweet-container section
   const renderTweets = function (tweets) {
+    //Makes sure that you don't load all tweets again
+    $('.tweet-container').empty()
+    //loop through tweets
     for (const tweet of tweets) {
+      //renderTweet passes tweet into createTweet
       let $renderTweet = createTweetElement(tweet);
+      //appends the tweet to the tweetContainer element
       $('.tweet-container').append($renderTweet);
     }
   }
 
+  //creates a new tweet element using jQuery
   const createTweetElement = function (tweet) {
-    const $tweet = $(`<article> 
-  <div class="tweet-box-top"> 
-    <div id="tweet-user">
-      <img src="${tweet.user.avatars}"> 
-      <p>${tweet.user.name}</p>
-    </div>
-    <div>${tweet.user.handle}</div>
-  </div>
-  <div> 
-    <div id="the-tweet">
-      <p>${tweet.content.text}</p>
-    </div>
-  </div>
-  <footer> 
-    <div>
-      <p>${tweet.created_at}</p>
-    </div>
-    <div id="tweet-icons">
-      <i class="fas fa-flag"></i>
-      <i class="fas fa-retweet"></i>
-      <i class="far fa-heart"></i>
-    </div>
-  </footer>
-  </article>`);
-    return $tweet;
+    const $tweet = $(
+    `<article>
+       <div class="tweet-box-top">
+          <div id="tweet-user">
+             <img src="${tweet.user.avatars}"> 
+             <p>${tweet.user.name}</p>
+          </div>
+          <div>${tweet.user.handle}</div>
+       </div>
+       <div>
+          <div id="the-tweet">
+             <p>${tweet.content.text}</p>
+          </div>
+       </div>
+       <footer>
+          <div>
+             <p>${timeago.format(tweet.created_at)}</p>
+          </div>
+          <div id="tweet-icons">
+             <i class="fas fa-flag"></i>
+             <i class="fas fa-retweet"></i>
+             <i class="far fa-heart"></i>
+          </div>
+       </footer>
+    </article>`
+    );
+  return $tweet;
   }
-  renderTweets(tweetData);
 
   // Post New Tweet
   $('.form-tweet').on('submit', event => {
@@ -73,10 +56,18 @@ $(document).ready(function () {
     let $tweet = $('.form-tweet').serialize();
     //post tweet to tweets
     $.post('/tweets/', $tweet, (err, data) => {
+      loadTweets();
       //clears text box after post
       const $input = $('#tweet-text');
       $input.val('').focus();
     })
   });
+  //loads the previous tweets
+  const loadTweets = () => {
+    $.get('/tweets', (tweet) => {
+      renderTweets(tweet);
+    })
+  }
+  loadTweets();
 })
 
