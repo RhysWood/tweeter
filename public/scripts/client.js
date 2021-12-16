@@ -52,6 +52,15 @@ $(document).ready(function () {
   $('.form-tweet').on('submit', event => {
     //prevent page from reloading
     event.preventDefault();
+    //validates tweet size
+    let tweetLength = $('#tweet-text').val().length;
+    if (tweetLength > 140) {
+      alert('Tweet is too long!');
+      return;
+    } else if (!tweetLength) {
+      alert('Plese enter a tweet.');
+    };
+
     //define tweet as the form input and serialize data
     let $tweet = $('.form-tweet').serialize();
     //post tweet to tweets
