@@ -12,8 +12,9 @@ $(document).ready(function () {
     for (const tweet of tweets) {
       //renderTweet passes tweet into createTweet
       let $renderTweet = createTweetElement(tweet);
-      //appends the tweet to the tweetContainer element
-      $('.tweet-container').append($renderTweet);
+      //prepend the tweet to the tweetContainer element
+      //prepend means the latest tweet will show first
+      $('.tweet-container').prepend($renderTweet);
     }
   }
 
