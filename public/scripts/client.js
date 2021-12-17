@@ -4,9 +4,16 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 $(document).ready(function () {
+  //prevents XSS
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   //inserts the tweet into the tweet-container section
   const renderTweets = function (tweets) {
-    //Makes sure that you don't load all tweets again
+    //Make sure that you don't load all tweets again
     $('.tweet-container').empty()
     //loop through tweets
     for (const tweet of tweets) {
@@ -20,18 +27,25 @@ $(document).ready(function () {
 
   //creates a new tweet element using jQuery
   const createTweetElement = function (tweet) {
+
+    //tweet user input templates
+    const avatar = $("<div>").text(tweet.user.avatars).html();
+    const name = $("<div>").text(tweet.user.name).html();
+    const handle = $("<div>").text(tweet.user.handle).html();
+    const text = $("<div>").text(tweet.content.text).html();
+
     const $tweet = $(
     `<article>
        <div class="tweet-box-top">
           <div id="tweet-user">
-             <img src="${tweet.user.avatars}"> 
-             <p>${tweet.user.name}</p>
+             <img src="${escape(avatar)}"> 
+             <p>${escape(name)}</p>
           </div>
-          <div>${tweet.user.handle}</div>
+          <div>${escape(handle)}</div>
        </div>
        <div>
           <div id="the-tweet">
-             <p>${tweet.content.text}</p>
+             <p>${escape(text)}</p>
           </div>
        </div>
        <footer>
@@ -75,6 +89,7 @@ $(document).ready(function () {
   //loads the previous tweets
   const loadTweets = () => {
     $.get('/tweets', (tweet) => {
+      //callback to the renderTweet function
       renderTweets(tweet);
     })
   }
