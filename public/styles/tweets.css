@@ -109,6 +109,16 @@ footer{
   margin: 1em;
 }
 
+#error{
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  color: red;
+  width: 30em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
 .fa-retweet:hover{
   color: red;
 }
@@ -120,3 +130,4 @@ footer{
 .fa-flag:hover{
   color:red;
 }
+

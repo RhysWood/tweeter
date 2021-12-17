@@ -3,8 +3,16 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+
+//resetCounter outside document.ready - can be reused
+const resetCounter = () => {
+  const counter = $('.counter')
+  const maxCount = 140;
+  counter.text(maxCount);
+}
+
 $(document).ready(function () {
-  //prevents XSS
+  //prevents XSS (people adding script to txt box to hack)
   const escape = function (str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
@@ -25,6 +33,16 @@ $(document).ready(function () {
     }
   }
 
+  const errorMessages = function (errMsg) {
+    //insert under error ID, display errMsg input
+    $('#error').slideDown().text(errMsg);
+    //slide up once key is pressed
+    setTimeout(() => {
+      $('#error').slideUp();
+      //cursor focus back on textarea
+      $('textarea').focus();
+    }, 3000);
+  }
   //creates a new tweet element using jQuery
   const createTweetElement = function (tweet) {
 
@@ -35,7 +53,7 @@ $(document).ready(function () {
     const text = $("<div>").text(tweet.content.text).html();
 
     const $tweet = $(
-    `<article>
+      `<article>
        <div class="tweet-box-top">
           <div id="tweet-user">
              <img src="${escape(avatar)}"> 
@@ -60,7 +78,7 @@ $(document).ready(function () {
        </footer>
     </article>`
     );
-  return $tweet;
+    return $tweet;
   }
 
   // Post New Tweet
@@ -70,11 +88,12 @@ $(document).ready(function () {
     //validates tweet size
     let tweetLength = $('#tweet-text').val().length;
     if (tweetLength > 140) {
-      alert('Tweet is too long!');
+      errorMessages('YOUR TWEET IS TOOOO LONG! 140 MAX');
       return;
     } else if (!tweetLength) {
-      alert('Plese enter a tweet.');
+      errorMessages('YOU NEED TO ENTER A TWEET FIRST');
     };
+    resetCounter();
 
     //define tweet as the form input and serialize data
     let $tweet = $('.form-tweet').serialize();
