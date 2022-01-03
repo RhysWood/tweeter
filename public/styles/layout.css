@@ -39,6 +39,10 @@ main{
    margin-top: 30px;
  }
 
+ main h2 {
+   margin-top: 2em;
+ }
+
 /* Mobile Layout */
 @media only screen and (max-width: 1023px){
 

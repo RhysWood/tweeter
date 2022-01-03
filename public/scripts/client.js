@@ -6,23 +6,23 @@
 
 //resetCounter outside document.ready - can be reused
 const resetCounter = () => {
-  const counter = $('.counter')
+  const counter = $('.counter');
   const maxCount = 140;
   counter.text(maxCount);
-}
+};
 
-$(document).ready(function () {
+$(document).ready(function() {
   //prevents XSS (people adding script to txt box to hack)
-  const escape = function (str) {
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
 
   //inserts the tweet into the tweet-container section
-  const renderTweets = function (tweets) {
+  const renderTweets = function(tweets) {
     //Make sure that you don't load all tweets again
-    $('.tweet-container').empty()
+    $('.tweet-container').empty();
     //loop through tweets
     for (const tweet of tweets) {
       //renderTweet passes tweet into createTweet
@@ -31,9 +31,9 @@ $(document).ready(function () {
       //prepend means the latest tweet will show first
       $('.tweet-container').prepend($renderTweet);
     }
-  }
+  };
 
-  const errorMessages = function (errMsg) {
+  const errorMessages = function(errMsg) {
     //insert under error ID, display errMsg input
     $('#error').slideDown().text(errMsg);
     //slide up after 3 seconds
@@ -42,9 +42,9 @@ $(document).ready(function () {
       //cursor focus back on textarea
       $('textarea').focus();
     }, 3000);
-  }
+  };
   //creates a new tweet element using jQuery
-  const createTweetElement = function (tweet) {
+  const createTweetElement = function(tweet) {
 
     //tweet user input templates
     const avatar = $("<div>").text(tweet.user.avatars).html();
@@ -79,7 +79,9 @@ $(document).ready(function () {
     </article>`
     );
     return $tweet;
-  }
+  };
+
+
 
   // Post New Tweet
   $('.form-tweet').on('submit', event => {
@@ -92,7 +94,7 @@ $(document).ready(function () {
       return;
     } else if (!tweetLength) {
       errorMessages('YOU NEED TO ENTER A TWEET FIRST');
-    };
+    }
     resetCounter();
 
     //define tweet as the form input and serialize data
@@ -103,15 +105,15 @@ $(document).ready(function () {
       //clears text box after post
       const $input = $('#tweet-text');
       $input.val('').focus();
-    })
+    });
   });
   //loads the previous tweets
   const loadTweets = () => {
     $.get('/tweets', (tweet) => {
       //callback to the renderTweet function
       renderTweets(tweet);
-    })
-  }
+    });
+  };
   loadTweets();
-})
+});
 
