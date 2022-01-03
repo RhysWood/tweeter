@@ -15,6 +15,8 @@ html {
  */
 
 body {
+  display: flex;
+  justify-content: center;
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
@@ -36,3 +38,49 @@ main{
    margin-right: auto;
    margin-top: 30px;
  }
+
+/* Mobile Layout */
+@media only screen and (max-width: 1023px){
+
+  header{
+    display: flex;
+    height: 400px;
+    width: 100%;
+    position: absolute;
+    justify-content: center;
+    flex-direction: column;
+   }
+   
+   .container {
+     display: flex;
+     position: relative;
+     margin-top: 470px;
+     width: 90%;
+     justify-content:center;
+     align-content: center;
+   }
+
+   .navbar {
+    background-color: gold;
+    background-image: url(http://www.transparenttextures.com/patterns/az-subtle.png);
+   }
+}
+/* Desktop Layout */
+@media only screen and (min-width: 1024px) {
+  header {
+    display: flex;
+    width: 50%;
+    margin-top: 10em;
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-bottom:auto;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 3em;
+  }
+  
+}

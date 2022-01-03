@@ -27,3 +27,7 @@
   align-self: center;
   justify-content: space-between;
 }
+
+.fa-angle-double-down{
+  color: red;
+}

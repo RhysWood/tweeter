@@ -36,7 +36,7 @@ $(document).ready(function () {
   const errorMessages = function (errMsg) {
     //insert under error ID, display errMsg input
     $('#error').slideDown().text(errMsg);
-    //slide up once key is pressed
+    //slide up after 3 seconds
     setTimeout(() => {
       $('#error').slideUp();
       //cursor focus back on textarea
