@@ -6,7 +6,6 @@
 html {
   box-sizing: border-box;
 }
-
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -14,58 +13,61 @@ html {
 /*
  * Global layout stuff
  */
+
 body {
   display: flex;
   justify-content: center;
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
-main {
-  width: 90%;
-  background-color: #f4f1ec;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 30px;
-}
 
-main h2 {
-  margin-top: 2em;
-}
+main{
+   width: 90%;
+   background-color: #f4f1ec;
+   display: flex;
+   flex-direction: column;
+   justify-content:center;
+   align-items: center;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 30px;
+ }
+
+ main h2 {
+   margin-top: 2em;
+ }
 
 /* Mobile Layout */
-@media only screen and (max-width: 1023px) {
-  header {
+@media only screen and (max-width: 1023px){
+
+  header{
     display: flex;
     height: 400px;
     width: 100%;
     position: absolute;
     justify-content: center;
     flex-direction: column;
-  }
+   }
+   
+   .container {
+     display: flex;
+     position: relative;
+     margin-top: 470px;
+     width: 90%;
+     justify-content:center;
+     align-content: center;
+   }
 
-  .container {
-    display: flex;
-    position: relative;
-    margin-top: 470px;
-    width: 90%;
-    justify-content: center;
-    align-content: center;
-  }
-
-  .navbar {
+   .navbar {
     background-color: gold;
     background-image: url(http://www.transparenttextures.com/patterns/az-subtle.png);
-  }
+   }
 }
 /* Desktop Layout */
 @media only screen and (min-width: 1024px) {
@@ -75,7 +77,7 @@ main h2 {
     margin-top: 10em;
     margin-left: 2em;
     margin-right: 2em;
-    margin-bottom: auto;
+    margin-bottom:auto;
   }
 
   .container {
@@ -84,4 +86,5 @@ main h2 {
     width: 100%;
     margin-top: 3em;
   }
+  
 }

@@ -1,4 +1,4 @@
-form {
+form{
   display: flex;
   flex-direction: column;
   align-self: center;
@@ -14,13 +14,13 @@ form textarea {
   border-right: none;
 }
 
-button {
-  background-color: #4056A1;
+button{
+  background-color: coral;
   font-family: Bungee, sans-serif;
   color: #FFF;
 }
 
-form div {
+form div{
   width: 95%;
   display: flex;
   align-items: center;
@@ -29,7 +29,7 @@ form div {
   font-family: Bungee, sans-serif;
 }
 
-footer {
+footer{
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -38,7 +38,7 @@ footer {
   height: 40px;
 }
 
-.new-tweet {
+.new-tweet{
   width: 30em;
   margin-bottom: 2em;
 }
@@ -47,31 +47,31 @@ footer {
   text-align: center;
 }
 
-.tweet-container {
+.tweet-container{
   display: flex;
   flex-direction: column;
   width: 30em;
 }
 
-.tweet-container article {
-  border: 1px solid black;
+.tweet-container article{
+  border: 1px solid rgb(0, 0, 0);
   height: auto;
   width: 30em;
   margin-top: 1em;
   margin-bottom: 1em;
-  transition: box-shadow 0.3s;
-  border-radius: 10px;
+  transition: box-shadow .3s;
+  border-radius:10px;
 }
 
-.tweet-container article:hover {
-  box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+.tweet-container article:hover{
+  box-shadow: 0 0 11px rgba(33,33,33,.2); 
 }
 
 .form-tweet {
   width: 30em;
 }
 
-.tweet-box-top {
+.tweet-box-top{
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -81,35 +81,35 @@ footer {
   margin-top: 10px;
 }
 
-#tweet-user {
+#tweet-user{
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-#tweet-user img {
+#tweet-user img{
   height: 1.5em;
   width: 1.5em;
   margin-right: 1em;
 }
 
-#tweet-icons {
+#tweet-icons{
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-#tweet-icons i {
-  margin: 4px;
+#tweet-icons i{
+  margin: 4px
 }
 
-#the-tweet {
+#the-tweet{
   height: auto;
   font-size: 20px;
   margin: 1em;
 }
 
-#error {
+#error{
   display: flex;
   justify-content: center;
   font-weight: bold;
@@ -119,14 +119,15 @@ footer {
   margin-bottom: 2em;
 }
 
-.fa-retweet:hover {
+.fa-retweet:hover{
   color: red;
 }
 
-.fa-heart:hover {
+.fa-heart:hover{
   color: red;
 }
 
-.fa-flag:hover {
-  color: red;
+.fa-flag:hover{
+  color:red;
 }
+

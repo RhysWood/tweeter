@@ -1,4 +1,4 @@
-.navbar {
+.navbar{
   height: 90px;
   background-color: coral;
   color: #FFF;
@@ -6,19 +6,19 @@
   align-items: center;
   justify-content: space-between;
   padding: 1.5em;
-  font-family: Source Sans Pro, sans-serif;
+  font-family:Source Sans Pro, sans-serif;
   position: sticky;
   width: 100%;
   position: fixed;
   top: 0;
 }
 
-#home {
+#home{
   font-family: Bungee, sans-serif;
   padding: 1.5em;
 }
 
-.navbar div {
+.navbar div{
   display: flex;
   flex-direction: column;
   padding: 1.5em;
@@ -28,6 +28,6 @@
   justify-content: space-between;
 }
 
-.fa-angle-double-down {
+.fa-angle-double-down{
   color: red;
 }
