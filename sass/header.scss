@@ -8,13 +8,12 @@ header{
   background-color: gold;
   background-image: url(http://www.transparenttextures.com/patterns/az-subtle.png);
   margin-top: 70px;
-}
-
-header h2{
-  margin-top: auto;
-  
-}
-
-header div img {
-  margin-top: 1em;
+  h2{
+    margin-top: auto;
+  }
+  div{
+    img{
+      margin-top: 1em;
+    }
+  }
 }

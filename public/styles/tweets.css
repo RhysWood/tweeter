@@ -5,7 +5,6 @@ form {
   justify-content: space-between;
   align-items: center;
 }
-
 form textarea {
   background-color: transparent;
   width: 30em;
@@ -13,13 +12,6 @@ form textarea {
   border-left: none;
   border-right: none;
 }
-
-button {
-  background-color: #4056A1;
-  font-family: Bungee, sans-serif;
-  color: #FFF;
-}
-
 form div {
   width: 95%;
   display: flex;
@@ -27,6 +19,12 @@ form div {
   justify-content: space-between;
   margin-top: 1em;
   font-family: Bungee, sans-serif;
+}
+
+button {
+  background-color: #4056A1;
+  font-family: Bungee, sans-serif;
+  color: #FFF;
 }
 
 footer {
@@ -42,7 +40,6 @@ footer {
   width: 30em;
   margin-bottom: 2em;
 }
-
 .new-tweet h2 {
   text-align: center;
 }
@@ -52,7 +49,6 @@ footer {
   flex-direction: column;
   width: 30em;
 }
-
 .tweet-container article {
   border: 1px solid black;
   height: auto;
@@ -62,7 +58,6 @@ footer {
   transition: box-shadow 0.3s;
   border-radius: 10px;
 }
-
 .tweet-container article:hover {
   box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
 }
@@ -86,7 +81,6 @@ footer {
   align-items: center;
   justify-content: center;
 }
-
 #tweet-user img {
   height: 1.5em;
   width: 1.5em;
@@ -98,7 +92,6 @@ footer {
   align-items: center;
   justify-content: center;
 }
-
 #tweet-icons i {
   margin: 4px;
 }
@@ -113,20 +106,20 @@ footer {
   display: flex;
   justify-content: center;
   font-weight: bold;
-  color: red;
+  color: #800000;
   width: 30em;
   margin-top: 2em;
   margin-bottom: 2em;
 }
 
 .fa-retweet:hover {
-  color: red;
+  color: #800000;
 }
 
 .fa-heart:hover {
-  color: red;
+  color: #800000;
 }
 
 .fa-flag:hover {
-  color: red;
+  color: #800000;
 }
